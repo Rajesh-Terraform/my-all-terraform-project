@@ -2,8 +2,8 @@
 module "vpc" {
   source = "./modules/vpc"
 
-  vpc_cidr           = var.vpc_cidr
+  vpc_cidr            = var.vpc_cidr
   private_subnet_cidr = var.private_subnet_cidr
-  availability_zone  = var.availability_zone
+  availability_zone   = var.availability_zone
   vpc_name            = "hub-vpc"
-}  
+}
