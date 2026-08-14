@@ -1,9 +1,13 @@
 terraform {
+  required_version = "= 1.9.8"
+
   backend "s3" {
     bucket = "harish-gaddam-bucket123"
 
-    key = "spoke/terraform.tfstate"
+    key = "phase2-spoke/terraform.tfstate"
 
     region = "ap-south-1"
+
+    encrypt = true
   }
 }  
