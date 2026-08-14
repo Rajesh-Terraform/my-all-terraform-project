@@ -19,3 +19,17 @@ resource "aws_subnet" "private" {
     Name = "${var.vpc_name}-private-subnet"
   }
 }
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.this.id
+
+  tags = {
+    Name = "${var.vpc_name}-private-route-table"
+  }
+}
+
+resource "aws_route_table_association" "private" {
+  subnet_id = aws_subnet.private.id
+
+  route_table_id = aws_route_table.private.id
+}
