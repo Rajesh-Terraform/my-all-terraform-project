@@ -176,8 +176,12 @@ jobs:
       - name: Configure AWS Hub Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::647132523867:role/github-actions-terraform-role-v1
+          role-to-assume: arn:aws:iam::434097521299:role/testingdummy
           aws-region: ap-south-1
+
+
+
+           arn:aws:iam::434097521299:role/testingdummy    
 
       - name: Verify Hub Account
         run: |
