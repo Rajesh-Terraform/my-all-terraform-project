@@ -1,11 +1,7 @@
-output "spoke_vpc_id" {
-  value = module.vpc.vpc_id
+output "vpc_id" {
+  value = aws_vpc.this.id
 }
 
-output "spoke_subnet_id" {
-  value = module.vpc.subnet_id
+output "subnet_id" {
+  value = aws_subnet.private.id
 }
-
-output "spoke_route_table_id" {
-  value = module.vpc.route_table_id
-}  
