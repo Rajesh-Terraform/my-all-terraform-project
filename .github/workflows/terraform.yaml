@@ -51,10 +51,10 @@ jobs:
           aws sts get-caller-identity
 
       - name: Terraform Format
-        run: terraform fmt -check -recursive
+        run: terraform fmt 
 
       - name: Terraform Init
-        run: terraform init -reconfigure
+        run: terraform init 
 
       - name: Terraform Validate
         run: terraform validate
@@ -113,10 +113,10 @@ jobs:
           aws sts get-caller-identity
 
       - name: Terraform Format
-        run: terraform fmt -check -recursive
+        run: terraform fmt 
 
       - name: Terraform Init
-        run: terraform init -reconfigure
+        run: terraform init 
 
       - name: Terraform Validate
         run: terraform validate
@@ -184,10 +184,10 @@ jobs:
           aws sts get-caller-identity
 
       - name: Terraform Format
-        run: terraform fmt -check -recursive
+        run: terraform fmt 
 
       - name: Terraform Init
-        run: terraform init -reconfigure
+        run: terraform init 
 
       - name: Terraform Validate
         run: terraform validate
