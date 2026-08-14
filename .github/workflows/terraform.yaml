@@ -176,9 +176,7 @@ jobs:
       - name: Configure AWS Hub Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::434097521299:role/testingdummy
-          aws-region: ap-south-1
-
+         
 
 
            
