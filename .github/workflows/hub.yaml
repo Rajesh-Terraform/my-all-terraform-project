@@ -1,0 +1,47 @@
+name: Terraform Hub
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  hub:
+    name: Deploy Hub
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform/hub
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::647132523867:role/github-actions-terraform-role-v1
+          aws-region: ap-south-1
+
+      - name: Check AWS Account
+        run: aws sts get-caller-identity
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve  
