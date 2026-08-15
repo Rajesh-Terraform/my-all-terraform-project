@@ -22,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: network/phase3-tgw
+        working-directory: network
 
     steps:
       - name: Checkout

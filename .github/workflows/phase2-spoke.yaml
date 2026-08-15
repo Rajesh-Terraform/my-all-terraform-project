@@ -22,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: spoke/phase2-spokevpc
+        working-directory: spoke
 
     steps:
       - name: Checkout

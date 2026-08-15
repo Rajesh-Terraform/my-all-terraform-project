@@ -24,7 +24,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: hub/phase1-hubvpc
+        working-directory: hub
 
     steps:
       - name: Checkout
