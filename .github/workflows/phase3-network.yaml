@@ -22,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: network
+        working-directory: network/terraform
 
     steps:
       - name: Checkout

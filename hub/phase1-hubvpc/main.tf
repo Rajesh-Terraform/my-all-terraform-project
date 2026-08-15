@@ -102,3 +102,10 @@ resource "aws_ec2_transit_gateway_route_table_association" "spoke" {
 }  
 
 
+module "hub_vpc" {
+  source = "../../modules/vpc"
+
+  # ...
+}
+
+

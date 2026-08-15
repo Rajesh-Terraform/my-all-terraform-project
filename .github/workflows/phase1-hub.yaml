@@ -24,7 +24,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: hub
+        working-directory: terraform/hub/phase1-hubvpc
 
     steps:
       - name: Checkout
@@ -45,8 +45,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Format
-        run: terraform 
+      
 
       - name: Terraform Validate
         run: terraform validate
