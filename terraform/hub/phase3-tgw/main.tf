@@ -8,7 +8,7 @@ data "terraform_remote_state" "hub_vpc" {
   config = {
     bucket = "REPLACE_WITH_HUB_STATE_BUCKET"
     key    = "hub/phase1-hubvpc/terraform.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
   }
 }
 
