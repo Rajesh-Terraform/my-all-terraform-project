@@ -1,7 +1,7 @@
 module "vpc" {
   source = "../../modules/vpc"
 
-  name = "hub-vpc"
+  vpc_name = "hub-vpc"
 
   vpc_cidr = "10.0.0.0/16"
 
@@ -16,12 +16,7 @@ module "vpc" {
   ]
 
   private_subnet_cidrs = [
-    "10.0.101.0/24",
-    "10.0.102.0/24"
+    "10.0.11.0/24",
+    "10.0.12.0/24"
   ]
-
-  tags = {
-    Environment = "production"
-    Network     = "hub"
-  }
-}  
+}
