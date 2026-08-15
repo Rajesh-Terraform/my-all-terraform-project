@@ -1,3 +1,7 @@
+# ============================================================
+# VPC
+# ============================================================
+
 resource "aws_vpc" "this" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
@@ -7,6 +11,7 @@ resource "aws_vpc" "this" {
     Name = var.vpc_name
   }
 }
+
 
 # ============================================================
 # INTERNET GATEWAY
@@ -19,6 +24,7 @@ resource "aws_internet_gateway" "this" {
     Name = "${var.vpc_name}-igw"
   }
 }
+
 
 # ============================================================
 # PUBLIC SUBNETS
@@ -41,6 +47,7 @@ resource "aws_subnet" "public" {
   }
 }
 
+
 # ============================================================
 # PRIVATE SUBNETS
 # ============================================================
@@ -60,6 +67,7 @@ resource "aws_subnet" "private" {
   }
 }
 
+
 # ============================================================
 # PUBLIC ROUTE TABLE
 # ============================================================
@@ -77,6 +85,7 @@ resource "aws_route_table" "public" {
   }
 }
 
+
 # ============================================================
 # PUBLIC ROUTE TABLE ASSOCIATIONS
 # ============================================================
@@ -89,6 +98,7 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
+
 # ============================================================
 # PRIVATE ROUTE TABLE
 # ============================================================
@@ -100,6 +110,7 @@ resource "aws_route_table" "private" {
     Name = "${var.vpc_name}-private-rt"
   }
 }
+
 
 # ============================================================
 # PRIVATE ROUTE TABLE ASSOCIATIONS

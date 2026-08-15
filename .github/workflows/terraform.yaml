@@ -14,12 +14,7 @@ permissions:
 env:
   AWS_REGION: ap-south-1
 
-  HUB_ACCOUNT_ID: "647132523867"
-  SPOKE_ACCOUNT_ID: "434097521299"
-
-  HUB_ROLE_ARN: "arn:aws:iam::647132523867:role/github-actions-terraform-role-v1"
-  SPOKE_ROLE_ARN: "arn:aws:iam::434097521299:role/testingdummy"
-
+  
 jobs:
 
   # ==========================================================
