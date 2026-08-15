@@ -30,7 +30,7 @@ resource "aws_internet_gateway" "this" {
 # PUBLIC SUBNETS
 # ------------------------------------------------------------
 
-resource "aws_subnet" "public1" {
+resource "aws_subnet" "public" {
   count = length(var.public_subnet_cidrs)
 
   vpc_id                  = aws_vpc.this.id
@@ -51,7 +51,7 @@ resource "aws_subnet" "public1" {
 # PRIVATE SUBNETS
 # ------------------------------------------------------------
 
-resource "aws_subnet" "private1" {
+resource "aws_subnet" "private" {
   count = length(var.private_subnet_cidrs)
 
   vpc_id            = aws_vpc.this.id
