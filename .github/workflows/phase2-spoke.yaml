@@ -3,6 +3,14 @@ name: Phase 2 - Spoke VPC
 on:
   workflow_dispatch:
 
+
+
+   
+  push:
+     branches:
+      - main
+   
+
 permissions:
   id-token: write
   contents: read

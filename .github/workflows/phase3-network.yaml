@@ -3,6 +3,14 @@ name: Phase 3 - TGW Network
 on:
   workflow_dispatch:
 
+
+
+
+  push:
+     branches:
+      - main
+       
+
 permissions:
   id-token: write
   contents: read
