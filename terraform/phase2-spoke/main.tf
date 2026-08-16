@@ -5,8 +5,8 @@ module "spoke" {
   vpc_cidr = "10.1.0.0/16"
 
   availability_zones = [
-    "us-east-1a",
-    "us-east-1b"
+    "ap-south-1a",
+    "ap-south-1b"
   ]
 
   private_subnet_cidrs = [
