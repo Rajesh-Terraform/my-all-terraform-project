@@ -1,15 +1,19 @@
 variable "vpc_name" {
-  type = string
+  description = "Name of the spoke VPC"
+  type        = string
 }
 
 variable "vpc_cidr" {
-  type = string
+  description = "CIDR block of the spoke VPC"
+  type        = string
 }
 
 variable "availability_zones" {
-  type = list(string)
+  description = "Availability zones for the spoke"
+  type        = list(string)
 }
 
 variable "private_subnet_cidrs" {
-  type = list(string)
+  description = "Private subnet CIDRs"
+  type        = list(string)
 }

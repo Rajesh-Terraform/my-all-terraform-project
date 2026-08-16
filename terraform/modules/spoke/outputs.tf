@@ -1,11 +1,14 @@
 output "vpc_id" {
-  value = aws_vpc.this.id
+  description = "Spoke VPC ID"
+  value       = aws_vpc.this.id
 }
 
 output "vpc_cidr" {
-  value = aws_vpc.this.cidr_block
+  description = "Spoke VPC CIDR"
+  value       = aws_vpc.this.cidr_block
 }
 
 output "private_subnet_ids" {
-  value = aws_subnet.private[*].id
+  description = "Spoke private subnet IDs"
+  value       = aws_subnet.private[*].id
 }
