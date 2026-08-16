@@ -1,17 +1,11 @@
 name: Phase 1 - Hub VPC
 
 on:
-  workflow_dispatch:
-
-
-    
-    
   push:
-     branches:
+    branches:
       - main
 
-    
-
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -19,19 +13,16 @@ permissions:
 
 jobs:
   phase1-hub:
-    name: Create Hub VPC
+    name: Phase 1 - Hub VPC
     runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: terraform/hub/phase1-hubvpc
+        working-directory: terraform/phase1-hub
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -39,13 +30,11 @@ jobs:
           role-to-assume: arn:aws:iam::647132523867:role/github-actions-terraform-role-v1
           aws-region: ap-south-1
 
-      - name: Check AWS identity
-        run: aws sts get-caller-identity
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
         run: terraform init
-
-      
 
       - name: Terraform Validate
         run: terraform validate
@@ -54,4 +43,6 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve  
+        run: terraform apply -auto-approve
+
+
