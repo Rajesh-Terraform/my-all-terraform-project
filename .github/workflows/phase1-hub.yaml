@@ -42,9 +42,9 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-      - name: Phase 1 - Apply Hub VPC
-        run: terraform apply -auto-approve phase1.tfplan
+      - name: Terraform Destroy hub vpc
+        run: terraform destroy -auto-approve  
 
-  
+      
 
  
